@@ -512,45 +512,43 @@ button:hover {
 /* Game Controls */
 .game-controls {
     position: absolute;
-    top: 50%;
+    bottom: 30%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 400px;
+    transform: translateX(-50%  );
+    width: 90%;
+    max-width: 700px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 25px;
+    padding: 15px;
     box-shadow: 0 10px 30px rgba(26, 76, 138, 0.15);
     display: flex;
-    flex-direction: column;
+    flex-direction: column  ;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 15px;
     border: 2px solid rgba(20, 209, 206, 0.2);
+    z-index: 1000;
 }
 
 #players {
-    width: 100%;
-    background: linear-gradient(145deg, #ffffff, #f8f9fa);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(20, 209, 206, 0.1);
-    font-size: 0.95em;
-    color: #0A8A88;
-    font-weight: 500;
-    text-align: center;
+    flex: 2;
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px;
     margin: 0;
 }
 
 #roll-dice {
-    width: 80%;
-    padding: 12px 25px;
-    font-size: 1.1em;
+    flex: 1;
+    min-width: 120px;
+    max-width: 200px;
     margin: 0;
 }
 
 #status {
-    width: 100%;
+    flex: 2;
     background: linear-gradient(145deg, #f8f9fa, #ffffff);
     padding: 12px 20px;
     border-radius: 12px;
@@ -722,6 +720,25 @@ button:hover {
 /* Utility Classes */
 .hidden {
     display: none !important;
+}
+#turn-indicator {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 8px 15px;
+    border-radius: 15px;
+    font-weight: 600;
+    text-align: center;
+    border: 2px solid rgba(20, 209, 206, 0.3);
+    min-width: 150px;
+}
+
+.turn-highlight {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 /* Media Queries */

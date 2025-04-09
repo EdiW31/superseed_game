@@ -178,6 +178,11 @@ async function rollDice() {
     updateUI(status);
     checkWin();
     currentPlayer = (currentPlayer + 1) % players.length;
+    const turnIndicator = document.getElementById('turn-indicator');
+    turnIndicator.innerHTML = `Player ${currentPlayer + 1}'s Turn`;
+    turnIndicator.style.color = players[currentPlayer].color;
+    turnIndicator.style.borderColor = players[currentPlayer].color;
+    turnIndicator.classList.add('turn-highlight');
 }
 
 // Update property ownership visuals
@@ -221,7 +226,7 @@ async function playFlappyBird() {
                         modal.classList.remove('show');
                         gameDiv.classList.add('hidden');
                         startButton.style.display = 'block';
-                        resolve(game.score >= 10);
+                        resolve(game.hasWon()); // Use the hasWon method instead of direct score comparison
                     }, 1000);
                 }
             }, 100);
@@ -271,19 +276,32 @@ async function playQuiz() {
 
 // Update game UI
 function updateUI(statusText) {
+    // Update player info display with highlighted current player
     const playersDiv = document.getElementById('players');
     playersDiv.innerHTML = players.map((player, i) => `
-        <p style="color: ${player.color}">
-            Player ${i + 1}: ${player.cash} SUPR<br>
-            Properties: ${player.properties.join(", ") || "None"}
-        </p>
+        <div class="player-info ${i === currentPlayer ? 'current-player' : ''}" 
+             style="color: ${player.color}; border: 2px solid ${player.color}; 
+                    background: ${i === currentPlayer ? `${player.color}22` : 'transparent'}">
+            <strong>Player ${i + 1}</strong><br>
+            💰 ${player.cash} SUPR<br>
+            🏠 ${player.properties.join(", ") || "None"}
+        </div>
     `).join('');
 
+    // Update status text
     document.getElementById('status').innerText = statusText;
 
+    // Update turn indicator for current player
+    const turnIndicator = document.getElementById('turn-indicator');
+    turnIndicator.innerHTML = `Player ${currentPlayer + 1}'s Turn`;
+    turnIndicator.style.color = players[currentPlayer].color;
+    turnIndicator.style.borderColor = players[currentPlayer].color;
+    turnIndicator.classList.add('turn-highlight');
+
+    // Update player tokens on board
     players.forEach((player, i) => {
         const token = document.getElementById(`p${i + 1}-token`);
-        if (token.parentElement) {
+        if (token && token.parentElement) {
             token.parentElement.removeChild(token);
         }
         const spaces = document.querySelectorAll('.space');
