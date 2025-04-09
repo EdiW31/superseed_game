@@ -55,6 +55,26 @@ class QuizGame {
                 options: ["150%", "300%", "400%", "500%"],
                 correct: 3 // 500%
                 // Source: Blocmates (Mar 31, 2025) - https://www.blocmates.com/blog/superseed-overview-what-is-superseed-the-blockchain-that-repays-your-debt
+            },
+            {
+                question: "What is the correct order of events following the SuperSeed Mainnet Launch as of April 2025?",
+                options: [
+                    "Genesis Passport Mint, Seeds, Token Generation Event (TGE)",
+                    "Token Generation Event (TGE), Genesis Passport Mint, Seeds",
+                    "Seeds, Genesis Passport Mint, Token Generation Event (TGE)",
+                    "Genesis Passport Mint, Token Generation Event (TGE), Seeds"
+                ],
+                correct: 0 // A) Genesis Passport Mint, Seeds, Token Generation Event (TGE)
+            },
+            {
+                question: "What is the correct order of events leading up to and including the SuperSeed Mainnet Launch as of December 2024?",
+                options: [
+                    "Mainnet Launch, Supersale, Token Generation Event (TGE)",
+                    "Supersale, Mainnet Launch, Token Generation Event (TGE)",
+                    "Token Generation Event (TGE), Supersale, Mainnet Launch",
+                    "Supersale, Token Generation Event (TGE), Mainnet Launch"
+                ],
+                correct: 1 // A) Supersale, Mainnet Launch, Token Generation Event (TGE)
             }
         ];
 
