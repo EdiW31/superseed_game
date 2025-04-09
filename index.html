@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>SUPERSEED Game</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUPERSEED Game</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -10,93 +11,97 @@
     <div class="top-banner">
         <div class="banner-content">
             <img src="./images/logo.png" alt="SuperSeed Logo" class="banner-logo">
-            <p>Made for SuperSeed Conquest</p>
+            <p>Made for SuperSeed</p>
         </div>
     </div>
 
     <div id="welcome-screen" class="active">
         <div class="welcome-content">
             <div class="welcome-left">
-            <h1 class="superseed-title">
-                <span class="highlight">SUPER</span>Mono<span class="highlight">SEED</span>
-            </h1>
-            <div class="rules-container">
-                <h2>How to Play</h2>
-                <ul>
-                    <li>🎲 Roll the dice to move around the board</li>
-                    <li>🏠 Land on properties to get a chance to buy them</li>
-                    <li>🎮 Win mini-games to acquire properties:</li>
+                <h1 class="superseed-title">
+                    <span class="highlight">SUPER</span>Mono<span class="highlight">SEED</span>
+                </h1>
+                <div class="rules-container">
+                    
+                    <h2>How to Play</h2>
                     <ul>
-                        <li>- Flappy Bird: Score 10 points</li>
-                        <li>- Quiz: Answer correctly</li>
+                        <li>🎲 Roll the dice to traverse the Superchain</li>
+                        <li>🏠 Land on SuperSeed properties to stake your claim</li>
+                        <li>🎮 Master mini-games to secure properties:</li>
+                        <ul>
+                            <li>- Flappy Seeds: Score 10 SuperGM points</li>
+                            <li>- Quiz: Prove your SuperSeed knowledge</li>
+                        </ul>
+                        <li>💰 Harvest SUPR rent when others land on your turf</li>
+                        <li>🏆 Be the last Supercollateral holder to reign supreme! (this means to win :D )</li>
                     </ul>
-                    <li>💰 Collect rent when others land on your properties</li>
-                    <li>🏆 Be the last player with money to win!</li>
-                </ul>
+                    <h4>This is a game that will make you learn many things about the Superseed and also have fun with your friends!</h4>
+                </div>
+                <p class="easter-egg">
+                    Can you find the easter egg? Hint: It’s in the Flappy Bird game! Tweet me the easter egg in my thread comments!
+                </p>
             </div>
-        </div>
-        <div class="welcome-right">
-            <div class="player-selection">
-                <h2>Select Players</h2>
-                <div class="player-setup">
-                    <div class="player-config">
-                        <button class="player-btn" data-players="2">2 Players</button>
-                        <button class="player-btn" data-players="3">3 Players</button>
-                        <button class="player-btn" data-players="4">4 Players</button>
-                    </div>
-                    <div id="player-colors" class="hidden">
-                        <option value="#ff69b4">Pink</option>
-                        <option value="#e91e63">Rose</option>
-                        <option value="#9c27b0">Purple</option>
-                        <option value="#3f51b5">Indigo</option>
-                        <option value="#2196f3">Blue</option>
-                        <option value="#00bcd4">Cyan</option>
-                        <option value="#4caf50">Green</option>
-                        <option value="#ff9800">Orange</option>
+            <div class="welcome-right">
+                <div class="player-selection">
+                    <h2>Assemble Your SuperSeed Crew</h2>
+                    <div class="player-setup">
+                        <div class="player-config">
+                            <button class="player-btn" data-players="2">2 Players</button>
+                            <button class="player-btn" data-players="3">3 Players</button>
+                            <button class="player-btn" data-players="4">4 Players</button>
+                        </div>
+                        <div id="player-colors" class="hidden">
+                            <option value="#ff69b4">Pink</option>
+                            <option value="#e91e63">Rose</option>
+                            <option value="#9c27b0">Purple</option>
+                            <option value="#3f51b5">Indigo</option>
+                            <option value="#2196f3">Blue</option>
+                            <option value="#00bcd4">Cyan</option>
+                            <option value="#4caf50">Green</option>
+                            <option value="#ff9800">Orange</option>
+                        </div>
                     </div>
                 </div>
+                <button id="start-game" class="superseed-button" disabled>Launch SuperGM Now</button>
             </div>
-            <button id="start-game" class="superseed-button" disabled>Play Now</button>
         </div>
-    </div>
     </div>
 
     <div id="game-screen" class="hidden">
         <div class="game-container">
             <div class="game-layout">
                 <div id="board">
-                    <div class="space">Start</div>
-                    <div class="space">Prop 1<br>($100)</div>
-                    <div class="space">Prop 2<br>($150)</div>
-                    <div class="space">Chance</div>
-                    <div class="space">Prop 3<br>($200)</div>
-                    <div class="space">Prop 4<br>($250)</div>
-                    <div class="space">Prop 5<br>($300)</div>
-                    <div class="space">Prop 6<br>($350)</div>
-                    <div class="space">Corner</div>
-                    <div class="space">Prop 7<br>($400)</div>
-                    <div class="space">Prop 8<br>($450)</div>
-                    <div class="space">Chance</div>
-                    <div class="space">Prop 9<br>($500)</div>
-                    <div class="space">Jail</div>
-                    <div class="space">Prop 10<br>($550)</div>
-                    <div class="space">Prop 11<br>($600)</div>
-                    <div class="space">Chance</div>
-                    <div class="space">Prop 12<br>($650)</div>
-                    <div class="space">Prop 13<br>($700)</div>
-                    <div class="space">Prop 14<br>($750)</div>
-                    <div class="space">Prop 15<br>($800)</div>
-                    <div class="space">Corner</div>
-                    <div class="space">Prop 16<br>($850)</div>
-                    <div class="space">Prop 17<br>($900)</div>
-                    <div class="space">Chance</div>
-                    <div class="space">Prop 18<br>($950)</div>
-
-                    <div class="game-controls">
-                        <div id="players"></div>
-                        <button id="roll-dice" class="superseed-button">Roll Dice</button>
-                        <p id="status">Select number of players to begin</p>
-                    </div>
+                    <div class="space">🏁 Start</div>
+                    <div class="space">🌱 Seedling Vault<br>(100 SUPR)</div>
+                    <div class="space">😊 Optimism Hub<br>(150 SUPR)</div>
+                    <div class="space">🎲 Chance</div>
+                    <div class="space">💰 Stablecoin Alley<br>(200 SUPR)</div>
+                    <div class="space">🔨 Auction Lane<br>(250 SUPR)</div>
+                    <div class="space">📜 Collateral Corner<br>(300 SUPR)</div>
+                    <div class="space">🏬 Layer 2 Plaza<br>(350 SUPR)</div>
+                    <div class="space">📍 Corner</div>
+                    <div class="space">🛤️ Sequencer Street<br>(400 SUPR)</div>
+                    <div class="space">🔥 Debt Burn Bridge<br>(450 SUPR)</div>
+                    <div class="space">🎲 Chance</div>
+                    <div class="space">🔗 Superchain Square<br>(500 SUPR)</div>
+                    <div class="space">🚔 Jail</div>
+                    <div class="space">🛍️ CDP Market<br>(550 SUPR)</div>
+                    <div class="space">💳 Repayment Row<br>(600 SUPR)</div>
+                    <div class="space">🎲 Chance</div>
+                    <div class="space">🛣️ Rollup Road<br>(650 SUPR)</div>
+                    <div class="space">🌾 Yield Fields<br>(700 SUPR)</div>
+                    <div class="space">🌳 Protocol Park<br>(750 SUPR)</div>
+                    <div class="space">🏙️ Supercollateral Towers<br>(800 SUPR)</div>
+                    <div class="space">📍 Corner</div>
+                    <div class="space">💻 EVM District<br>(850 SUPR)</div>
+                    <div class="space">🛒 Foundation Avenue<br>(900 SUPR)</div>
+                    <div class="space">🎲 Chance</div>
+                    <div class="space">🏡 Debt-Free Estate<br>(950 SUPR)</div>
+                </div>
+                <div class="game-controls">
+                    <div id="players"></div>
+                    <button id="roll-dice" class="superseed-button">Roll Dice</button>
+                    <p id="status">Select number of players to begin</p>
                 </div>
             </div>
         </div>
@@ -106,10 +111,10 @@
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Flappy Bird Challenge</h2>
+                <h2>Flappy Seed Challenge</h2>
                 <div class="modal-instructions">
-                    <p>🎮 Press SPACE/ClICK to jump and avoid obstacles</p>
-                    <p>🎯 Score 10 points to win the property</p>
+                    <p>🎮 Press SPACE/CLICK to jump and avoid obstacles</p>
+                    <p>🎯 Score 5 SuperGM to win the property</p>
                     <p>💡 Be careful not to hit the pipes!</p>
                 </div>
             </div>
@@ -121,35 +126,29 @@
             </div>
         </div>
     </div>
-    
-    <!-- Update the quiz modal content section -->
-<div id="quizModal" class="modal">
-    <div class="modal-overlay"></div>
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2>SuperSeed Quiz Challenge</h2>
-            <div class="modal-instructions">
-                <p>🤔 Answer the question correctly to win the property</p>
-                <p>⏰ Take your time to think</p>
-                <p>✨ Only one chance to answer!</p>
-            </div>
-        </div>
-        <div class="modal-game hidden">
-            <div id="quizContainer">
-                <p id="question"></p>
-                <div id="options" class="quiz-options">
-                    <button class="quiz-option" onclick="checkQuizAnswer(0)"></button>
-                    <button class="quiz-option" onclick="checkQuizAnswer(1)"></button>
-                    <button class="quiz-option" onclick="checkQuizAnswer(2)"></button>
-                    <button class="quiz-option" onclick="checkQuizAnswer(3)"></button>
+
+    <div id="quizModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SuperSeed Quiz Challenge</h2>
+                <div class="modal-instructions">
+                    <p>🤔 Answer the question correctly to win the property</p>
+                    <p>⏰ Take your time to think</p>
+                    <p>✨ Only one chance to answer!</p>
                 </div>
             </div>
-        </div>
-        <div class="modal-controls">
-            <button id="startQuiz" class="superseed-button">Start Quiz</button>
+            <div class="modal-game hidden">
+                <div id="quizContainer">
+                    <p id="question"></p>
+                    <div id="options" class="quiz-options"></div>
+                </div>
+            </div>
+            <div class="modal-controls">
+                <button id="startQuiz" class="superseed-button">Start Quiz</button>
+            </div>
         </div>
     </div>
-</div>
 
     <script src="flappyBird.js"></script>
     <script src="script.js"></script>
